@@ -25,7 +25,7 @@ def w(path, text):
 def make_texts():
     w('使用说明.md', '''# 示例项目资料库
 
-这是一套用于演示 FileReader 的虚构项目资料，包含 PDF / Word / Excel / PPT /
+这是一套用于演示 FileLens 的虚构项目资料，包含 PDF / Word / Excel / PPT /
 图片 / 压缩包等常见格式，可以直接体验"点击节点看摘要与内容"的效果。
 
 ## 目录结构

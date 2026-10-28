@@ -147,7 +147,7 @@ def run_tests():
     print('[5] 静态页面')
     with urllib.request.urlopen(BASE_URL + '/', timeout=10) as r:
         html = r.read().decode('utf-8')
-    check('index.html 可访问且注入了默认根目录', '__DEFAULT_ROOT__' not in html and 'FileReader' in html)
+    check('index.html 可访问且注入了默认根目录', '__DEFAULT_ROOT__' not in html and 'FileLens' in html)
 
 
 def _find(node, ext):

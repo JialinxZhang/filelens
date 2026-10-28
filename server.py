@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""FileReader · 文件夹速览 —— 本地服务
+"""FileLens · 文件夹速览 —— 本地服务
 
 用法：
     python server.py [文件夹路径] [端口]
@@ -323,7 +323,7 @@ def main():
 
     url = f'http://127.0.0.1:{port}'
     print('┌─────────────────────────────────────────────┐')
-    print('│        FileReader · 文件夹速览              │')
+    print('│          FileLens · 文件夹速览               │')
     print('└─────────────────────────────────────────────┘')
     if root:
         print(f'  根目录  {root}')
