@@ -13,6 +13,12 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+# CI 的 Windows 管道输出可能是 cp1252，打印中文会抛 UnicodeEncodeError
+try:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+except Exception:
+    pass
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DEMO = os.path.join(ROOT, 'demo', '示例项目资料库')

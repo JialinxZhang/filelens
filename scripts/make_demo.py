@@ -8,8 +8,15 @@ import json
 import os
 import shutil
 import struct
+import sys
 import zipfile
 import zlib
+
+# CI 的 Windows 管道输出可能是 cp1252，打印中文会抛 UnicodeEncodeError
+try:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+except Exception:
+    pass
 
 BASE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'demo', '示例项目资料库')
 
