@@ -1,0 +1,16 @@
+{
+  "name": "园区开放接口",
+  "version": "1.2.0",
+  "apis": [
+    {
+      "method": "GET",
+      "path": "/v1/devices",
+      "desc": "设备列表"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/alarms",
+      "desc": "上报告警"
+    }
+  ]
+}
