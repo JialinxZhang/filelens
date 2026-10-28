@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1440px; overflow:hidden; }
+body {
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:
+    radial-gradient(900px 600px at 85% -5%, rgba(76,110,245,.16), transparent 60%),
+    radial-gradient(700px 500px at -10% 100%, rgba(174,62,201,.10), transparent 55%),
+    linear-gradient(180deg,#fbfcff 0%,#f3f5fa 100%);
+  display:flex; flex-direction:column; padding:52px 56px 44px;
+}
+.bg-dots { position:absolute; inset:0;
+  background-image:radial-gradient(rgba(76,110,245,.10) 1.6px, transparent 1.6px);
+  background-size:26px 26px; pointer-events:none; }
+.wrap { position:relative; display:flex; flex-direction:column; height:100%; }
+
+.badge-row { display:flex; align-items:center; gap:16px; }
+.logo { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,#5c7cfa,#4c6ef5);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(76,110,245,.35); }
+.logo svg { width:30px; height:30px; }
+.brand { font-size:30px; font-weight:800; color:#1d2330; letter-spacing:.02em; }
+.brand span { color:#8a919c; font-weight:600; font-size:24px; margin-left:6px; }
+.tag { margin-left:auto; background:#fff; border:1.5px solid #dfe5f8; color:#4c6ef5;
+  font-size:24px; font-weight:700; padding:10px 22px; border-radius:999px; }
+
+h1 { margin-top:34px; color:#171b26; }
+h1 .q { display:block; font-size:44px; font-weight:600; color:#5a6272; margin-bottom:14px; }
+h1 .big { display:block; font-size:96px; font-weight:900; line-height:1.22; letter-spacing:.01em; }
+h1 .hl { color:#4c6ef5; position:relative; }
+h1 .hl::after { content:""; position:absolute; left:-4px; right:-4px; bottom:10px; height:26px;
+  background:rgba(76,110,245,.16); border-radius:8px; z-index:-1; }
+.sub { margin-top:18px; font-size:30px; color:#6a7284; line-height:1.5; }
+.sub b { color:#2b3346; }
+
+.shot { margin-top:30px; flex:1; min-height:0; background:#fff; border-radius:22px; overflow:hidden;
+  border:1px solid #e6e8ec; box-shadow:0 18px 50px rgba(23,32,64,.14); display:flex; flex-direction:column; }
+.shot-bar { flex:none; height:52px; background:#f4f6fa; border-bottom:1px solid #e9ecf2;
+  display:flex; align-items:center; padding:0 20px; gap:8px; }
+.dot { width:13px; height:13px; border-radius:50%; }
+.d1{background:#ff5f57}.d2{background:#febc2e}.d3{background:#28c840}
+.url { margin-left:14px; flex:1; background:#fff; border:1px solid #e6e8ec; border-radius:999px;
+  font-size:19px; color:#9aa1ac; padding:6px 18px; }
+.local-pill { background:#e8f7ee; color:#1d8a4a; font-size:18px; font-weight:700; padding:5px 14px; border-radius:999px; }
+.shot img { flex:1; min-height:0; width:100%; object-fit:cover; object-position:left top; margin-bottom:-3.5%; transform:translateY(0); display:block; }
+
+.feats { margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.feat { background:rgba(255,255,255,.9); border:1px solid #e6e8ec; border-radius:18px;
+  padding:20px 22px; display:flex; align-items:center; gap:14px; box-shadow:0 4px 14px rgba(23,32,64,.05); }
+.feat .ic { font-size:34px; flex:none; }
+.feat .t { font-size:26px; font-weight:700; color:#232a38; line-height:1.35; }
+.feat .t span { display:block; font-size:19px; font-weight:500; color:#8a919c; margin-top:3px; }
+
+.footer { margin-top:26px; display:flex; align-items:center; justify-content:space-between; }
+.gh { background:#171b26; color:#fff; border-radius:16px; padding:16px 26px; font-size:27px; font-weight:700;
+  display:flex; align-items:center; gap:12px; }
+.gh svg { width:32px; height:32px; fill:#fff; }
+.mit { color:#9aa1ac; font-size:21px; font-weight:600; }
+</style></head><body>
+<div class="bg-dots"></div>
+<div class="wrap">
+  <div class="badge-row">
+    <div class="logo"><svg viewBox="0 0 32 32"><path d="M10 10h4M10 16h12M10 22h8M10 10v12" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></div>
+    <div class="brand">FileLens<span>文件夹速览</span></div>
+    <div class="tag">开源 · 免费</div>
+  </div>
+  <h1>
+    <span class="q">收到 600 个文件、十几层深的文件夹怎么办？</span>
+    <span class="big">3 秒看懂</span>
+    <span class="big">里面<span class="hl">到底有什么</span></span>
+  </h1>
+  <div class="sub">把任意文件夹变成一张<b>可探索的地图</b>：点哪个文件，就看它的<b>摘要和核心内容</b></div>
+  <div class="shot">
+    <div class="shot-bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+      <span class="url">127.0.0.1:8710</span><span class="local-pill">纯本地运行</span></div>
+    <img src="../screenshot.png" alt="">
+  </div>
+  <div class="feats">
+    <div class="feat"><span class="ic">📄</span><div class="t">单击文件看摘要<span>标题 · 要点 · 正文预览</span></div></div>
+    <div class="feat"><span class="ic">🖼</span><div class="t">PDF 自动截图<span>扫描件也能看首页</span></div></div>
+    <div class="feat"><span class="ic">🔍</span><div class="t">打字即搜秒定位<span>Enter 逐个跳转</span></div></div>
+    <div class="feat"><span class="ic">🛡</span><div class="t">数据不出电脑<span>只监听本机 · 不上传</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="gh"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>github.com/JialinxZhang/filelens</div>
+    <div class="mit">MIT 开源协议 · v1.0.0</div>
+  </div>
+</div>
+</body></html>
